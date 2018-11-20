@@ -11,11 +11,7 @@ git clone https://github.com/luiswitz/graphql-ruby.git
 
 - Setup the database
 ```
-./bin/rails db:create
-```
-
-```
-./bin/rails db:migrate
+./bin/rails db:setup
 ```
 
 - Start the server
