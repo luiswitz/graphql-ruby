@@ -1,16 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe Types::MutationType do
+RSpec.describe Types::UserType do
   subject { described_class }
 
   specify 'the correct name' do
-    expect(subject.name).to eq('Mutation')
+    expect(subject.name).to eq('User')
   end
 
-  specify 'the corect fields' do
+  specify 'the correct fields' do
     expected_fields = {
-      createLink: 'article',
-      createUser: 'User'
+      id: 'ID!',
+      name: 'String!',
+      email: 'String!'
     }
 
     expect(subject.fields).to match_fields(expected_fields)
