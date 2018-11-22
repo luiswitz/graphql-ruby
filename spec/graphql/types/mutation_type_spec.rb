@@ -9,7 +9,8 @@ RSpec.describe Types::MutationType do
 
   specify 'the corect fields' do
     expected_fields = {
-      createLink: 'article'
+      createLink: 'article',
+      createUser: 'User'
     }
 
     expect(subject.fields).to match_fields(expected_fields)
