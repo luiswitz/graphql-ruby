@@ -4,7 +4,11 @@ RSpec.describe Resolvers::SignInUser do
   subject { described_class.new }
 
   let(:obj) { nil }
-  let(:ctx) { nil }
+  let(:ctx) do
+    {
+      session: { token: nil }
+    }
+  end
 
   let(:args) do
     {
@@ -62,6 +66,12 @@ RSpec.describe Resolvers::SignInUser do
         )
 
         expect(call).to eq(expected_response)
+      end
+
+      it 'stores token on the session' do
+        call
+
+        expect(ctx[:session][:token]).to eq(token)
       end
     end
 
